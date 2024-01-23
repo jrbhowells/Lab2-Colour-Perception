@@ -1,4 +1,4 @@
-# Lab 2 - Colour and Constrast
+# Lab 2 - Colour and Perception
 
 This lab session has two parts. In the first part, you will experience various physiological and psychological phenomenons related to your vision, colour perception and how the brain makes up missing visual information.  In the second part, you will explore how colour images are separated into different colour spaces and how these could be used to perform various useful function to enhance what you see.
 
