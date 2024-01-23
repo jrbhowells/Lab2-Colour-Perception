@@ -5,7 +5,7 @@ This lab session has two parts. In the first part, you will experience various p
 Before you start this Lab Session, clone this repo to your local machine and do all your work on your local copy.
 
 ---
-## Part 1 - Seeing Colour and Shapes
+## Part 1 - Seeing Colours and Shapes
 ---
 
 ### Task 1 - Find your blind spot
