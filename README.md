@@ -96,8 +96,9 @@ Although full colour images contain much more information than grayscale images,
 In this task, we will map an RGB image (also called a Truecolour image) stored as a PNG file into a grayscale image.  
 
 The accepted formula to perform this mapping is:
-
+```
     I = 0.299 * R + 0.5870 * G + 0.1140 * B 
+```
 
 In matrix form, it is:
 
