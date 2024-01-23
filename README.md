@@ -87,6 +87,7 @@ You can find out more about this [here](https://en.wikipedia.org/wiki/Café_wall
 ## Part 2 - Exploring Colours in Matlab
 ---
 
+In the second part of Lab 2, you will import from a file a full colour image (called RGB or TrueColour) and map this to various colour spaces.  You will then examine what each of the channels in these colour spaces look like.  
 
 ### Task 9 - Convert RGB image to Grayscale
 
