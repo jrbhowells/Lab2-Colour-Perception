@@ -82,6 +82,11 @@ You can find out more about this [here](https://en.wikipedia.org/wiki/Café_wall
 
 <video src="assets/dancer.m4v" width="640" height="640" controls></video>
 
+### Task 9 - the Incomplete Triangles
+
+The last task in part 1 is to consider the picture below.  How many triangles are in the picture?  What conclusions can you draw from this observation?
+
+<p align="center"> <img src="assets/triangle.jpg" /> </p><BR>
 
 ---
 ## Part 2 - Exploring Colours in Matlab
@@ -89,11 +94,11 @@ You can find out more about this [here](https://en.wikipedia.org/wiki/Café_wall
 
 In the second part of Lab 2, you will import from a file a full colour image (called RGB or TrueColour) and map this to various colour spaces.  You will then examine what each of the channels in these colour spaces look like.  
 
-### Task 9 - Convert RGB image to Grayscale
+### Task 10 - Convert RGB image to Grayscale
 
 Although full colour images contain much more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
 
-Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this via the icon ![Alt text](assets/cwf_icon.jpg)).  The photo **peppers.png** is already stored in this folder.  First find out what is contained in this photo file with **imfinfo( )**:
+Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this with the icon ![Alt text](assets/cwf_icon.jpg) at the top left of the Matlab window).  The photo **peppers.png** is already stored in this folder.  Find out information about this photo file with **imfinfo( )**:
 ```
 imfinfo('peppers.png')
 ```
@@ -121,43 +126,36 @@ figure              % start a new figure window
 imshow(I)
 ```
 
-It would easier for us to compare the two photo if we display them side-by-side. This can be done with:
+It would easier to compare the two photo if we display them side-by-side and add a title. This can be done with:
 
 ```
 imshowpair(RGB, I, 'montage')
+title('Original colour image (left) and grayscale image (right)');
 ```
 
-### Task 10 - Splitting an RGB image into separate channels
+### Task 11 - Splitting an RGB image into separate channels
 
-RGB = imread('peppers.png');
-imshow(RGB)
+Split the image into its component red, green, and blue channels with **imsplit( )**. Then display all three images side-by-side as a montage.
 
-Split the image into its component red, green, and blue channels.
-
+```
 [R,G,B] = imsplit(RGB);
+montage({R, G, B},'Size',[1 3])
+```
 
-Display the three color channels as a montage. Red peppers have a signal predominantly in the red channel. Yellow and green peppers have a signal in both the red and green channels. White objects, such as the garlic in the foreground, have a strong signal in all three channels.
+Note the following: Red peppers have a signal predominantly in the red channel. Yellow and green peppers have a signal in both the red and green channels. White objects, such as the garlic in the foreground, have a strong signal in all three channels.
 
-montage({R,G,B},'Size',[1 3])
+Examine the size and type of the various image variables shown on the right side of the Matlab window (i.e RGB, R, G, B and I).
 
+### Task 12 - Map RGB image to HSV space and into separate channels
 
-### Task 11 - Map RGB image to HSV space and into separate channels
+Convert the RGB image to the HSV colorspace by using the **rgb2hsv( )** function.  Then split it into H, S and V components.
 
-Convert the RGB image to the HSV colorspace by using the rgb2hsv function.  Then split it into H, S and V channels.
-
+```
 HSV = rgb2hsv(RGB);
 [HSV] = imsplit(HSV);
 montage({H,S,V}, 'Size', [1 3]))
+```
 
+### Task 13 - Map RGB image to XYZ space
 
-### Task 12 - Map RGB image to XYZ space
-
-XYZ = rgb2xyz(RGB);
-
-figure
-imshowpair(RGB,XYZ, 'montage');
-
-title('Image in RGB Colour Space (left) and XYZ Colour Space (Right)')
-
-[X,Y,Z] = imsplit(XYZ);
-montage({X,Y,Z}, 'Size', [1 3])
+Finally, map the RGB image into the XYZ colour space with the **rgb2xyz( )** function.  Examine what you get and comment.
