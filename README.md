@@ -93,7 +93,7 @@ In the second part of Lab 2, you will import from a file a full colour image (ca
 
 Although full colour images contain much more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
 
-Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this via the icon ![Alt text](image.png)).  The photo **peppers.png** is already stored in this folder.  First find out what is contained in this photo file with **imfinfo( )**:
+Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this via the icon ![Alt text](assets/cwf_icon.jpg)).  The photo **peppers.png** is already stored in this folder.  First find out what is contained in this photo file with **imfinfo( )**:
 ```
 imfinfo('peppers.png')
 ```
