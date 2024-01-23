@@ -87,3 +87,64 @@ You can find out more about this [here](https://en.wikipedia.org/wiki/Café_wall
 ## Part 2 - Exploring Colours in Matlab
 ---
 
+
+### Task 9 - Convert RGB image to Grayscale
+
+Although full colour images contain much more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
+
+In this task, we will map an RGB image (also called a Truecolour image) stored as a PNG file into a grayscale image.  
+
+The accepted formula to perform this mapping is:
+
+    I = 0.299 * R + 0.5870 * G + 0.1140 * B 
+
+In matrix form, it is:
+
+<p align="center"> <img src="assets/grayscale_eq.jpg" /> </p><BR>
+
+The im2gray function converts RGB values to grayscale values by forming a weighted sum of the R, G, and B components:
+
+
+
+
+
+RGB = imread('peppers.png');
+imshow(RGB)
+I = rgb2gray(RGB);
+figure
+imshow(I)
+
+### Task 10 - Splitting an RGB image into separate channels
+
+RGB = imread('peppers.png');
+imshow(RGB)
+
+Split the image into its component red, green, and blue channels.
+
+[R,G,B] = imsplit(RGB);
+
+Display the three color channels as a montage. Red peppers have a signal predominantly in the red channel. Yellow and green peppers have a signal in both the red and green channels. White objects, such as the garlic in the foreground, have a strong signal in all three channels.
+
+montage({R,G,B},'Size',[1 3])
+
+
+### Task 11 - Map RGB image to HSV space and into separate channels
+
+Convert the RGB image to the HSV colorspace by using the rgb2hsv function.  Then split it into H, S and V channels.
+
+HSV = rgb2hsv(RGB);
+[HSV] = imsplit(HSV);
+montage({H,S,V}, 'Size', [1 3]))
+
+
+### Task 12 - Map RGB image to XYZ space
+
+XYZ = rgb2xyz(RGB);
+
+figure
+imshowpair(RGB,XYZ, 'montage');
+
+title('Image in RGB Colour Space (left) and XYZ Colour Space (Right)')
+
+[X,Y,Z] = imsplit(XYZ);
+montage({X,Y,Z}, 'Size', [1 3])
