@@ -93,28 +93,39 @@ In the second part of Lab 2, you will import from a file a full colour image (ca
 
 Although full colour images contain much more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
 
-In this task, we will map an RGB image (also called a Truecolour image) stored as a PNG file into a grayscale image.  
-
-The accepted formula to perform this mapping is:
+Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this via the icon ![Alt text](image.png)).  The photo **peppers.png** is already stored in this folder.  First find out what is contained in this photo file with **imfinfo( )**:
 ```
-    I = 0.299 * R + 0.5870 * G + 0.1140 * B 
+imfinfo('peppers.png')
+```
+Matlab will return some information about this image file such as its size and the format of the image data.
+
+Read the image data into the array RGB and display it:(Remember to add the semicolon at the end of the imread statement to suppress printing of all the image data read.)
+```
+RGB = imread('peppers.png');  
+imshow(RGB)
+```
+In this task, we will convert the RGB image into a grayscale image. The formula to perform this mapping is:
+```
+    I = 0.299 * R + 0.587 * G + 0.114 * B 
 ```
 
 In matrix form, it is:
 
-<p align="center"> <img src="assets/grayscale_eq.jpg" /> </p><BR>
+<p align="center"> <img src="assets/grayscale_eq.jpg" /> </p>
 
-The im2gray function converts RGB values to grayscale values by forming a weighted sum of the R, G, and B components:
+The function **im2gray( )** converts RGB values to grayscale values by forming a weighted sum of the R, G, and B components according to the equation above. 
 
-
-
-
-
-RGB = imread('peppers.png');
-imshow(RGB)
+```
 I = rgb2gray(RGB);
-figure
+figure              % start a new figure window
 imshow(I)
+```
+
+It would easier for us to compare the two photo if we display them side-by-side. This can be done with:
+
+```
+imshowpair(RGB, I, 'montage')
+```
 
 ### Task 10 - Splitting an RGB image into separate channels
 
