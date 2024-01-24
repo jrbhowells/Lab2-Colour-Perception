@@ -1,8 +1,9 @@
 # Lab 2 - Colour and Perception
+*_Peter Cheung, version 1.0, 24 Jan 2024_*
 
-This lab session has two parts. In the first part, you will experience various physiological and psychological phenomenons related to your vision, colour perception and how the brain makes up missing visual information.  In the second part, you will explore how colour images are separated into different colour spaces and how these could be used to perform various useful function to enhance what you see.
+This lab session has two parts. In the first part, you will experiment with various physiological and psychological phenomenons related to your vision, colour perception and how the brain makes up missing visual information.  In the second part, you will explore how colour images are separated into different colour spaces.
 
-Before you start this Lab Session, clone this repo to your local machine and do all your work on your local copy.
+Clone this repo to your laptop and do all your work using your local copy.
 
 ---
 ## Part 1 - Seeing Colours and Shapes
@@ -10,28 +11,27 @@ Before you start this Lab Session, clone this repo to your local machine and do 
 
 ### Task 1 - Find your blind spot
 
-Play the video [here](http://www.ee.ic.ac.uk/pcheung/teaching/DE4_DVS/assets/blind_spot_test.mp4) and follow its instruction.  Write in your logbook what you learned from this task.
+Play the video [here](http://www.ee.ic.ac.uk/pcheung/teaching/DE4_DVS/assets/blind_spot_test.mp4) and follow its instructions.  Make notes on what you found out.
 
 <video src="assets/blind_spot_test.mp4" width="480" height="360" controls></video>
 
 ### Task 2 - Ishihara Colour Test
 
-The Ishihara test is a colour vision test deisgned to detect deficiencies in the long and medium cones.  It consists of one set of pictures containing colour dots with a number embedded within.  Your goal is to identify the number you see in each of them.
+The Ishihara test is a colour vision test designed to detect deficiencies in the long and medium cones.  It consists of one set of pictures containing colour dots with a number embedded within.  Your goal is to identify the number you see in each of them.
 
 You can start the test [here](Ishihara_test.md).
 
 ### Task 3 - Reverse colour
 
 1. Get hold of a white sheet of paper and hold it up next to your screen.  
-2. Now stare at white dot in the centre of the American Flag in funny colours shown below for 10 seconds.  
+2. Now stare at white dot in the centre of the American flag in funny colours shown below for 10 seconds or more.  
 3. Suddenly switch your gaze to the white sheet of paper.
-
 
 You should see the American flag in the normal red, white and blue colours.
 
 <p align="center"> <img src="assets/american_flag.jpg" /> </p><BR>
 
-Explain the reason why this happens.
+Explain the reasons why this happens.
 
 ### Task 4 - Troxler's Fading
 
@@ -39,7 +39,7 @@ Here is another example to demonstrate the Opponent Process Theory.  Play the vi
 
 <video src="assets/purple_dots.mp4" width="640" height="320" controls></video>
 
-Write down in your logbook the reason of what you see.  Read the Wikipedia page on Troxler's fading [here](https://en.wikipedia.org/wiki/Troxler%27s_fading), which explains this phenomenon and relates it to the human visual system.
+Write down in your logbook the reason of what you see.  Read the wikipedia page on Troxler's fading [here](https://en.wikipedia.org/wiki/Troxler%27s_fading), which explains this phenomenon and relates it to the human visual system.
 
 [Here](http://www.ee.ic.ac.uk/pcheung/teaching/DE4_DVS/assets/blue_circle.mp4) is another experiment to test the phenomenon.  Play the video and comment.
 
@@ -47,15 +47,15 @@ Write down in your logbook the reason of what you see.  Read the Wikipedia page 
 
 ### Task 5 - Brain sees what it expects
 
-Our brain interprets what we see based on our expectation.  Here is an example.  The image below shows two tables with blue and red tops.  Which is the larger table?  Measure this on the screen with a ruler (or just marking on a sheet of paper).  Write in your logbook the reason for this phenomenon.
+Our brain interprets what we see based on our expectation.  Here is an example.  The image below shows two tables with blue and red tops.  Which is the longer table?  Measure this on the screen with a ruler (or just marking on a sheet of paper).  Write in your logbook the reason for this phenomenon.
 
 <p align="center"> <img src="assets/table.jpg" /> </p><BR>
 
-Here is another example, where our brain see what it expects instead of what light reaches the retina.  Which is darker, the square labelled A or B?
+Here is another example, where our brain see what it expects instead of what hits the retina.  Which square is darker, the one labelled A or B?  Why?
 
 <p align="center"> <img src="assets/shadow.jpg" /> </p><BR>
 
-To verify that in fact A and B are exactly the same colour of grey, you may need to capture this image and use an image editing to extract the B square and put it next to A for comparison.
+To verify the result, you need to use an image editor app and cut out one square and put it next to the other for comparison.
 
 ### Task 6 - The Grid Illusion
 
@@ -92,19 +92,19 @@ The last task in part 1 is to consider the picture below.  How many triangles ar
 ## Part 2 - Exploring Colours in Matlab
 ---
 
-In the second part of Lab 2, you will import from a file a full colour image (called RGB or TrueColour) and map this to various colour spaces.  You will then examine what each of the channels in these colour spaces look like.  
+In the second part of Lab 2, you will import a full colour image from a file and map this to various colour spaces.  You will then examine what each of the components (or channels) in these colour spaces.  
 
 ### Task 10 - Convert RGB image to Grayscale
 
-Although full colour images contain much more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
+Although full colour images contain more information than grayscale images, we often find that they contain too much information and require unnecessary calculations. Instead it may be better to turn the colour image into a grayscale image before we perform various processing such as feature extraction.
 
-Open Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this with the icon ![Alt text](assets/cwf_icon.jpg) at the top left of the Matlab window).  The photo **peppers.png** is already stored in this folder.  Find out information about this photo file with **imfinfo( )**:
+Run Matlab and navigate the current working folder to the matlab folder of Lab 2.  (You do this with the icon ![Alt text](assets/cwf_icon.jpg) at the top left of the Matlab window).  The photo **peppers.png** is already stored in this folder.  Find out information about this photo file with **imfinfo( )**:
 ```
 imfinfo('peppers.png')
 ```
 Matlab will return some information about this image file such as its size and the format of the image data.
 
-Read the image data into the array RGB and display it:(Remember to add the semicolon at the end of the imread statement to suppress printing of all the image data read.)
+Read the image data into the array RGB and display it:(*_Remember to add the semicolon at the end of the imread statement to suppress printing of all the image data read._*)
 ```
 RGB = imread('peppers.png');  
 imshow(RGB)
@@ -118,7 +118,7 @@ In matrix form, it is:
 
 <p align="center"> <img src="assets/grayscale_eq.jpg" /> </p>
 
-The function **im2gray( )** converts RGB values to grayscale values by forming a weighted sum of the R, G, and B components according to the equation above. 
+The function **rgb2gray( )** converts RGB values to grayscale values by forming a weighted sum of the R, G, and B components according to the equation above. 
 
 ```
 I = rgb2gray(RGB);
@@ -126,16 +126,16 @@ figure              % start a new figure window
 imshow(I)
 ```
 
-It would easier to compare the two photo if we display them side-by-side and add a title. This can be done with:
+It would easier to compare the two photo if we display them side-by-side with **imshowpair( )** and add a title. This can be done with:
 
 ```
 imshowpair(RGB, I, 'montage')
-title('Original colour image (left) and grayscale image (right)');
+title('Original colour image (left) grayscale image (right)');
 ```
 
 ### Task 11 - Splitting an RGB image into separate channels
 
-Split the image into its component red, green, and blue channels with **imsplit( )**. Then display all three images side-by-side as a montage.
+Split the image into its red, green, and blue channels with **imsplit( )**. Then display all three images side-by-side as a montage.
 
 ```
 [R,G,B] = imsplit(RGB);
@@ -144,7 +144,7 @@ montage({R, G, B},'Size',[1 3])
 
 Note the following: Red peppers have a signal predominantly in the red channel. Yellow and green peppers have a signal in both the red and green channels. White objects, such as the garlic in the foreground, have a strong signal in all three channels.
 
-Examine the size and type of the various image variables shown on the right side of the Matlab window (i.e RGB, R, G, B and I).
+Examine the information shown on the right side of the Matlab window. Explain their dimensions and data type of the variables RGB, R, G, B and I.
 
 ### Task 12 - Map RGB image to HSV space and into separate channels
 
@@ -158,4 +158,4 @@ montage({H,S,V}, 'Size', [1 3]))
 
 ### Task 13 - Map RGB image to XYZ space
 
-Finally, map the RGB image into the XYZ colour space with the **rgb2xyz( )** function.  Examine what you get and comment.
+Finally, map the RGB image to the XYZ colour space with the **rgb2xyz( )** function.  Examine what you get and comment.
