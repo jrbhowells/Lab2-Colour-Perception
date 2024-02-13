@@ -20,13 +20,13 @@ This works in patterns too: the brain will interpolate what is meant to be withi
 
 ### Task 2: **Ishihara Colour Test**
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled.png)
+![Untitled](img/Untitled.png)
 
-12 plates require identifying the number at their centre. This tests the capability of the long- and medium-wavelength sensitivity cones in the eye.
+12 plates require identifying the number at their centre. This tests the capability of the long- and medium-wa`Ûvelength sensitivity cones in the eye.
 
 ### Task 3: American Flag
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%201.png)
+![Untitled](img/Untitled%201.png)
 
 After staring at this inverted-colour American flag for 10 seconds, then at a white sheet of paper, a regular American flag appears on the white sheet.
 
@@ -36,31 +36,31 @@ This is as a result of Opponent Process Theory, which states that two separate s
 
 ### Task 4: Troxler’s Fading
 
-![Lilac-Chaser.gif](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Lilac-Chaser.gif)
+![Lilac-Chaser.gif](img/Lilac-Chaser.gif)
 
 Troxler’s fading relies on two phenomena: the Opponent Process Theory, where magenta and green are antagonistic (hence the green dot), and the fact that peripheral vision becomes less sensitive over time - e.g. after a time, you don’t *feel* that you are wearing a hat, unless you move it.
 
 ### Task 5: Expectation vs Reality
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%202.png)
+![Untitled](img/Untitled%202.png)
 
 In the above example, both the red and the green table are the same length on the screen.
 
 Similarly here, A and B are the same colour:
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%203.png)
+![Untitled](img/Untitled%203.png)
 
 These phenomena are in spite of the information hitting the retina: the brain knows what it *expects* the relative sizes / colours of the object to be due to visual cues such as perspective and shadow, and it maps the visual information onto those expectations.
 
 ### Task 6: The Grid
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%204.png)
+![Untitled](img/Untitled%204.png)
 
 The dark dots appear here due to the concept of *receptive fields*: visual information about a point in our visual field comes from a field of receptors, not just one. In an on-centre receptive field, on-centre luminance excites the field, and off-centre inhibits. On the intersections, there is more off-centre luminance than elsewhere - so the on-centre fields are inhibited and dark spots seem to appear.
 
 ### Task 7: Café Wall Illusion
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%205.png)
+![Untitled](img/Untitled%205.png)
 
 The café wall illusion is probably caused by the irradiation illusion, where light regions appear larger than identically-sized dark regions, as the image disappears if the tiles are replaced by colours of the same brightness or of less contrast.
 
@@ -70,7 +70,7 @@ The Spinning Dancer can sometimes spontaneously spin the other way! This illusio
 
 ### Task 9: Incomplete Triangles
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%206.png)
+![Untitled](img/Untitled%206.png)
 
 In the above image, there are no complete triangles. However, the brain can interpolate between the chevrons and the pac-men to see two triangles placed over the top of each other.
 
@@ -134,11 +134,11 @@ RGB = imread('peppers.png');
 imshow(RGB)
 ```
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%207.png)
+![Untitled](img/Untitled%207.png)
 
 We can also convert the image to grayscale using a MATLAB builtin `img2gray()`. This applies a mapping to the image, converting R, G and B into a single grayscale value according to the sensitivity of the human eye’s L, M and S cone cells: `I = 0.299 * R + 0.587 * G + 0.114 * B`.
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%208.png)
+![Untitled](img/Untitled%208.png)
 
 We can now display the images as a pair, using the Image Processing Toolbox’s `imshowpair()` function.
 
@@ -147,29 +147,29 @@ imshowpair(RGB, I, 'montage')
 title('Original colour image (left) grayscale image (right)');
 ```
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%209.png)
+![Untitled](img/Untitled%209.png)
 
 ### Task 11: Using Imsplit()
 
 Using `imsplit()`, we can divide the image up into it’s red, green and blue channels: we can see that red objects are very bright in the red channel, white objects are bright in all three, and green and yellow peppers are strong in both the red and green channels (blue is not a very common colour in nature).
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%2010.png)
+![Untitled](img/Untitled%2010.png)
 
 MATLAB processes images as uint8 frames, and we can see here that it is storing the whole RGB image as a 3D matrix, where each of the R, G and B channels are simple 2D matrices. I is the original image, converted to grayscale.
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%2011.png)
+![Untitled](img/Untitled%2011.png)
 
 ### Task 12: Mapping to HSV
 
 Using the MATLAB builtin `rgb2hsv()`, we can convert the image into HSV format instead of RGB, and then `imsplit()` it into constituent components. The right image (Value) is now a good approximation of the grayscale image, while the Hue and Saturation provide the colour detail.
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%2012.png)
+![Untitled](img/Untitled%2012.png)
 
 ### Task 13: **Map RGB image to XYZ space**
 
 The XYZ representation of the image is slightly harder to interpret:
 
-![Untitled](Lab%202%20-%20Colour%20Perception%20355be90e547043aca217bf4ed07719cf/Untitled%2013.png)
+![Untitled](img/Untitled%2013.png)
 
 It is, however, computed in exactly the same way as the other split images:
 
